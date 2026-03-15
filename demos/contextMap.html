@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Context Map Diagram Demo</title>
+    <meta name="description" content="DDD Context Map diagram examples" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Context Map Diagram Demo</h1>
+
+    <h2>Basic Example - Two Contexts</h2>
+    <pre class="mermaid">
+contextMap
+  context Sales
+  context Inventory
+    </pre>
+
+    <h2>Partnership Relationship</h2>
+    <pre class="mermaid">
+contextMap
+  context Sales
+  context Marketing
+
+  Sales <-> Marketing
+    </pre>
+
+    <h2>Upstream/Downstream Relationship</h2>
+    <pre class="mermaid">
+contextMap
+  context Inventory
+  context Sales
+
+  Inventory --> Sales
+    </pre>
+
+    <h2>Complex Example</h2>
+    <pre class="mermaid">
+contextMap
+  context Sales
+  context Inventory
+  context Shipping
+  context Billing
+
+  Inventory --> Sales
+  Sales --> Shipping
+  Sales <-> Billing
+    </pre>
+
+    <script type="module">
+      import mermaid from '/mermaid.esm.mjs';
+      mermaid.initialize({ startOnLoad: true, logLevel: 'debug' });
+    </script>
+  </body>
+</html>

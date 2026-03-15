@@ -13,6 +13,10 @@ export {
   Commit,
   Merge,
   Statement,
+  ContextMap,
+  Context,
+  Partnership,
+  UpstreamDownstreamRelationship,
   isInfo,
   isPacket,
   isPacketBlock,
@@ -24,6 +28,10 @@ export {
   isBranch,
   isCommit,
   isMerge,
+  isContextMap,
+  isContext,
+  isPartnership,
+  isUpstreamDownstreamRelationship,
 } from './generated/ast.js';
 
 export {
@@ -35,6 +43,7 @@ export {
   GitGraphGeneratedModule,
   RadarGeneratedModule,
   TreemapGeneratedModule,
+  ContextMapGeneratedModule,
 } from './generated/module.js';
 
 export * from './gitGraph/index.js';
@@ -45,3 +54,4 @@ export * from './pie/index.js';
 export * from './architecture/index.js';
 export * from './radar/index.js';
 export * from './treemap/index.js';
+export * from './context-map/index.js';
